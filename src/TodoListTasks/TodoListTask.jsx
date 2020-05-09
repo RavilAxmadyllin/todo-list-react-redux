@@ -2,9 +2,8 @@ import React from 'react'
 
 
 class TodoListTask extends React.Component {
-    state = {
-        editMode: false
-    }
+
+    state = {editMode: false}
     onIsDoneChanged = (e) => {
         this.props.changeTasks(this.props.tasks.id, {isDone: e.currentTarget.checked})
     };
@@ -12,16 +11,9 @@ class TodoListTask extends React.Component {
         this.props.changeTasks(this.props.tasks.id, {title: e.currentTarget.value})
 
     }
-    activatedEditMode = () =>{
-        this.setState({
-            editMode:true
-        })
-    }
-    deactivatedEditMode =() =>{
-        this.setState({
-            editMode:false
-        })
-    }
+    activatedEditMode = () => this.setState({editMode:true})
+    deactivatedEditMode =() => this.setState({editMode:false})
+
     render = () =>{
         let done = this.props.tasks.isDone ? 'todoList-task done' : 'todoList-task'
         return (
@@ -44,5 +36,4 @@ class TodoListTask extends React.Component {
         );
     }
 }
-
 export default TodoListTask;

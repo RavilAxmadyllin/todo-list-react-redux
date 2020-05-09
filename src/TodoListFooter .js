@@ -1,24 +1,14 @@
 import React from 'react';
 
 class TodoListFooter  extends React.Component {
-    state = {
-        isHidden: true
-    }
-    onAllFilterClick = () => {
-        this.props.changeFilter("All")
-    }
-    onCompletedFilterClick = () => {
-        this.props.changeFilter("Completed")
-    }
-    onActiveFilterClick = () => {
-        this.props.changeFilter("Active")
-    }
-    onShowFiltersClick = () => {
-        this.setState({isHidden: true})
-    }
-    onHideFiltersClick = () => {
-        this.setState({isHidden: false})
-    }
+    state = {isHidden: false}
+
+    onAllFilterClick = () => this.props.changeFilter("All")
+    onCompletedFilterClick = () => this.props.changeFilter("Completed")
+    onActiveFilterClick = () => this.props.changeFilter("Active")
+
+    onShowFiltersClick = () => this.setState({isHidden: true})
+    onHideFiltersClick = () => this.setState({isHidden: false})
 
     render = () => {
         let classForAll = this.props.filterValue === "All" ? "filter-active" : "";
@@ -47,9 +37,5 @@ class TodoListFooter  extends React.Component {
         );
     }
 }
-
-
-
-
 
 export default TodoListFooter ;
