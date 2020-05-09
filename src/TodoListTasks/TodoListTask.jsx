@@ -26,10 +26,10 @@ class TodoListTask extends React.Component {
                         value={this.props.tasks.title}
                         autoFocus={true}/>:
                     <span
-                        onClick={this.activatedEditMode}>
-                        <span>{this.props.tasks.id}</span>
+                        onDoubleClick={this.activatedEditMode}>
                         <span> {this.props.tasks.title}</span>
                         <span> priority:{this.props.tasks.priority}</span>
+                        <button onClick={()=>this.props.deleteTask(this.props.tasks.id)}>X</button>
                    </span>
                 }
             </div>
