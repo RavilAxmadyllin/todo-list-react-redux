@@ -1,23 +1,27 @@
 import React from 'react';
 import './App.css';
-import TodoList from "./TodoList";
-import AddNewItemForm from "./AddNewItemForm";
-import {connect} from "react-redux";
-import {addTodoList} from "./redux/reducer";
+import TodoList from './components/TodoList';
+import AddNewItemForm from './components/AddNewItemForm';
+import {connect} from 'react-redux';
+import {addTodolist, setTodoList} from './redux/reducer';
 
 
 class App extends React.Component {
+    componentDidMount() {
+        this.props.setTodoList()
+    }
 
     addTodoList=(newTodoListTitle)=>{
-        this.props.addTodo(newTodoListTitle)
+        this.props.addTodolist(newTodoListTitle)
     }
     render = () => {
         let todoList = this.props.todoLists.map(t =>{
-            return <TodoList id={t.id} title={t.title} tasks={t.tasks}/>
+            return <TodoList key={t.id} id={t.id} title={t.title} tasks={t.tasks}/>
         })
         return (
             <div>
-                    <AddNewItemForm addItem={this.addTodoList}/>
+                <TodolistHeder />
+                <AddNewItemForm addItem={this.addTodoList}/>
                 <div className="App">
                     {todoList}
                 </div>
@@ -30,11 +34,9 @@ const mstp = (state) =>{
         todoLists: state.todoLists
     }
 }
-const mdtp = (dispatch) =>({
-        addTodo:(title) =>dispatch(addTodoList(title)),
-})
 
-const ConnectedApp = connect(mstp, mdtp)(App)
+
+const ConnectedApp = connect(mstp, {setTodoList, addTodolist})(App)
 export default ConnectedApp;
 
 
