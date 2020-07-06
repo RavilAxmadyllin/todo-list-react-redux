@@ -15,9 +15,10 @@ class TodoListTasks extends React.Component {
             />
         });
         return (
-            <div className="todoList-tasks">
+            <ul>
                 {taskElement}
-            </div>
+            </ul>
+
         );
     }
 }

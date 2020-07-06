@@ -16,14 +16,15 @@ const EditeblSpan = (props) => {
     }
     return<>
         {editMode ? <input
+                className={'input'}
                 onBlur={deactivatedEditMode}
                 onChange={onTitleChange}
                 value={state}
                 autoFocus={true}/>:
-            <span
-                onDoubleClick={activatedEditMode}>
-                        <span> {state}</span>
-                   </span>}
+            <span className={'span-todo'} onDoubleClick={activatedEditMode}>
+                {state}
+            </span>
+        }
     </>
 
 }

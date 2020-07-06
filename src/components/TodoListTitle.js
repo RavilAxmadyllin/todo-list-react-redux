@@ -3,10 +3,12 @@ import EditeblSpan from './EditeblSpan';
 
 const TodoListTitle = (props) => {
     return (
-        <>
-            <EditeblSpan title={props.title} onTitleChange={props.changeTitle}/>
+        <div className={'todolist-title'}>
+            <EditeblSpan title={props.title}
+                         onTitleChange={props.changeTitle}
+                         deleteTodo={props.deleteTodo}/>
             <button onClick={props.deleteTodo}> X</button>
-        </>
+        </div>
     );
 
 }

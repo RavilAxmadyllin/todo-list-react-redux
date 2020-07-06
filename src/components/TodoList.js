@@ -56,7 +56,6 @@ class TodoList extends React.Component {
         })
 
         return (
-            <div className="App">
                 <div className="todoList">
                     <div className="todoList-header">
                         <TodoListTitle changeTitle={this.changeTitle} title={this.props.title} deleteTodo={this.deleteTodo} />
@@ -70,7 +69,6 @@ class TodoList extends React.Component {
                         changeFilter={this.changeFilter}
                     />
                 </div>
-            </div>
         );
     }
 }

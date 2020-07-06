@@ -25,19 +25,22 @@ const TodoListTask = (props) => {
         props.changeTasks(props.task.id, {priority: e.target.value})
     }
     return (
-        <div className={done} >
-            <input type="checkbox" checked={props.task.status === 2}
-                   onChange={onIsDoneChanged}/>
-            <EditeblSpan title={props.task.title}  onTitleChange={onTitleChange}/>
-            <span> priority: <select onChange={onChangeSelected} value={priotityTitle} >
-                <option value="0">Low </option>
-                <option value="1">Middle</option>
-                <option value="2">High</option>
-                <option value="3">Urgently</option>
-            </select></span>
-            <button onClick={()=>props.deleteTask(props.task.id)}>X</button>
-
-        </div>
+        <>
+            <li className={`${done} 'task-list'`}>
+                <input type="checkbox" checked={props.task.status === 2}
+                       onChange={onIsDoneChanged}/>
+                <EditeblSpan title={props.task.title}  onTitleChange={onTitleChange} />
+                <span> priority: 
+                    <select onChange={onChangeSelected} value={priotityTitle} >
+                    <option value="0">Low </option>
+                    <option value="1">Middle</option>
+                    <option value="2">High</option>
+                    <option value="3">Urgently</option>
+                </select>
+                </span>
+                <button onClick={()=>props.deleteTask(props.task.id)}>X</button>
+            </li>
+        </>
     );
 
 }
