@@ -74,7 +74,7 @@ button{
 .todoList {
   max-width: 600px;
   width: 100%;
-  margin: 10px 30px;
+  margin: 50px 30px;
 }
 .todolist-title{
   display: flex;
@@ -83,7 +83,7 @@ button{
   font-weight: bold;
 }
 
-.todoList-task:nth-child(even){
+.todoList-task:nth-child(odd){
   background: #f7e7e7;
 }
 .todoList-task {
@@ -98,7 +98,7 @@ button{
   padding-left: 10px;
 }
 .filter-active {
-  background-color: blue;
+  opacity: .7;
 }
 
 .error {

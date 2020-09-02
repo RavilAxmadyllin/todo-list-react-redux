@@ -2,7 +2,7 @@ import React from 'react';
 
 class TodoListFooter  extends React.Component {
     state = {
-        isHidden: false
+        isHidden: true
     }
 
     onAllFilterClick = () => this.props.changeFilter("All")

@@ -9,11 +9,11 @@ import {TodolistHeder} from './TodolistHeder';
 
 class App extends React.Component {
     componentDidMount() {
-        this.props.setTodoList()
+        this.props.setTodoList();
     }
 
     addTodoList=(newTodoListTitle)=>{
-        this.props.addTodolist(newTodoListTitle)
+        this.props.addTodolist(newTodoListTitle);
     }
     render = () => {
         let todoList = this.props.todoLists.map(t =>{

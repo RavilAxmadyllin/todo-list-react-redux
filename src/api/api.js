@@ -7,29 +7,36 @@ const instance = axios.create({
 })
 
 export const api = {
-    getTodolist() {
-        return instance.get('')
+   async getTodolist() {
+        const result = await instance.get('')
+       return result.data
     },
-    createTodolist(title) {
-        return instance.post('', {title})
+    async createTodolist(title) {
+        const result = await instance.post('', {title})
+        return result.data
     },
-    deleteTodolist(id) {
-        return instance.delete(`/${id}`)
+    async deleteTodolist(id) {
+        const result = await instance.delete(`/${id}`)
     },
-    updateTodolistTitle(title, id) {
-        return instance.put(`/${id}`, {title})
+    async updateTodolistTitle(title, id) {
+        const result = await instance.put(`/${id}`, {title})
+        return result.data
     },
-    getTasks(id) {
-        return instance.get(`/${id}/tasks`)
+    async getTasks(id) {
+        const result = await instance.get(`/${id}/tasks`)
+        return result.data
     },
-    createTask(id, title) {
-        return instance.post(`/${id}/tasks`, {title})
+    async createTask(id, title) {
+        const result = await instance.post(`/${id}/tasks`, {title})
+        return result.data
     },
-    deleteTask(id, taskId) {
-        return instance.delete(`/${id}/tasks/${taskId}`)
+    async deleteTask(id, taskId) {
+        const result = await instance.delete(`/${id}/tasks/${taskId}`)
+        return result.data
     },
-    updateTask(id, taskId, task) {
-        return instance.put(`/${id}/tasks/${taskId}`, task)
+    async updateTask(id, taskId, task) {
+        const result = await instance.put(`/${id}/tasks/${taskId}`, task)
+        return result.data
     }
 
 }

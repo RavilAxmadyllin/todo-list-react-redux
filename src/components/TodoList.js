@@ -6,7 +6,6 @@ import AddNewItemForm from './AddNewItemForm';
 import {connect} from 'react-redux';
 import {
     addTask,
-    changeTaskSucces,
     deleteTask,
     deleteTodolist,
     getTasks,
