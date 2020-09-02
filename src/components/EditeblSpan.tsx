@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
-const EditeblSpan = (props) => {
+const EditeblSpan:React.FC<PropsType> = (props) => {
     const [editMode, setEditMode] = useState(false)
     const [state, setState] = useState(props.title)
 
@@ -11,7 +11,7 @@ const EditeblSpan = (props) => {
         setEditMode(false)
         props.onTitleChange(state)
     }
-    const onTitleChange = (e) => {
+    const onTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setState(e.currentTarget.value)
     }
     return<>
@@ -29,3 +29,9 @@ const EditeblSpan = (props) => {
 
 }
 export default EditeblSpan
+
+
+type PropsType = {
+    title: string
+    onTitleChange: (title: string) => void
+}
